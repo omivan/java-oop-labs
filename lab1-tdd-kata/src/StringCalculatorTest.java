@@ -71,7 +71,7 @@ public class StringCalculatorTest {
     @Test
     public void testAddCustomDelimiterRepetition() throws Exception {
 
-        int actualSum = stringCalculator.add("//&&\n1&&&&2&&3&&&&4");
+        int actualSum = stringCalculator.add("//&&\n1&&2&&3&&4");
         int expectedSum = 10;
         Assert.assertEquals(expectedSum, actualSum);
     }
@@ -95,7 +95,7 @@ public class StringCalculatorTest {
     }
     @Test
     public void arraySumInvalidFormat() {
-        Exception exception = assertThrows(Exception.class, () -> 
+        Exception exception = assertThrows(Exception.class, () ->
             stringCalculator.arraySum("1,h2,h3y,h", ",h",
                     "Invalid input, expected format: num[,][\\n]num.."));
         String expectedMessage = "Invalid input, expected format: num[,][\\n]num..";
@@ -105,22 +105,22 @@ public class StringCalculatorTest {
     }
     @Test
     public void delimiterCheckerValid(){
-        boolean actualSum = stringCalculator.delimiter_checker("[eew][ew][gdfd]");
+        boolean actualSum = stringCalculator.delimiterChecker("[eew][ew][gdfd]");
         assertTrue("delimiterCheckerValid failed", actualSum);
     }
     @Test
     public void delimiterCheckerInValid1(){
-        boolean actualSum = stringCalculator.delimiter_checker("[eew][ew]gdfd]");
+        boolean actualSum = stringCalculator.delimiterChecker("[eew][ew]gdfd]");
         assertFalse("delimiterCheckerInValid1 failed", actualSum);
     }
     @Test
     public void delimiterCheckerInValid2(){
-        boolean actualSum = stringCalculator.delimiter_checker("[eeewgdfd");
+        boolean actualSum = stringCalculator.delimiterChecker("[eeewgdfd");
         assertFalse("delimiterCheckerInValid2 failed", actualSum);
     }
     @Test
     public void delimiterCheckerValid3(){
-        boolean actualSum = stringCalculator.delimiter_checker("[eew][ew][gdfd");
+        boolean actualSum = stringCalculator.delimiterChecker("[eew][ew][gdfd");
         assertFalse("delimiterCheckerValid3 invalid", actualSum);
     }
     @Test
@@ -135,6 +135,7 @@ public class StringCalculatorTest {
         int actualSum = stringCalculator.add("1000,999,1001");
         Assert.assertEquals(1999, actualSum);
     }
+    
 
 
 }
