@@ -135,7 +135,7 @@ public class StringCalculatorTest {
         int actualSum = stringCalculator.add("1000,999,1001");
         Assert.assertEquals(1999, actualSum);
     }
-    
+
 
 
 }

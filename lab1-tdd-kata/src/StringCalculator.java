@@ -23,6 +23,7 @@ public class StringCalculator {
     ArrayList<String> customStrSplit(String str, String delimiters) throws Exception {
         ArrayList<String> splittedWords = new ArrayList<>(){{add(str);}};
         List<String> splittedDelimiterList = getSplittedDelimiterList(delimiters);
+        System.out.println(splittedWords);
 
         for(String delimiter: splittedDelimiterList){
             List<String> tempSplittedWords = new ArrayList<>();
@@ -32,6 +33,7 @@ public class StringCalculator {
             splittedWords = new ArrayList<>(tempSplittedWords);
 
         }
+//        System.out.println(splittedWords);
 
         return  splittedWords;
     }
